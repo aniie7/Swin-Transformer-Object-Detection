@@ -1,7 +1,7 @@
 _base_ = [
     '../_base_/models/cascade_mask_rcnn_swin_fpn.py',
-    '../_base_/datasets/coco_instance.py',
-    '../_base_/schedules/schedule_1x.py', '../_base_/default_runtime.py'
+    '../_base_/datasets/coco_detection.py',
+    '../_base_/schedules/schedule_3x.py', '../_base_/default_runtime.py'
 ]
 
 model = dict(
@@ -26,7 +26,7 @@ model = dict(
                 conv_out_channels=256,
                 fc_out_channels=1024,
                 roi_feat_size=7,
-                num_classes=80,
+                num_classes=1,
                 bbox_coder=dict(
                     type='DeltaXYWHBBoxCoder',
                     target_means=[0., 0., 0., 0.],
@@ -45,7 +45,7 @@ model = dict(
                 conv_out_channels=256,
                 fc_out_channels=1024,
                 roi_feat_size=7,
-                num_classes=80,
+                num_classes=1,
                 bbox_coder=dict(
                     type='DeltaXYWHBBoxCoder',
                     target_means=[0., 0., 0., 0.],
@@ -64,7 +64,7 @@ model = dict(
                 conv_out_channels=256,
                 fc_out_channels=1024,
                 roi_feat_size=7,
-                num_classes=80,
+                num_classes=1,
                 bbox_coder=dict(
                     type='DeltaXYWHBBoxCoder',
                     target_means=[0., 0., 0., 0.],
